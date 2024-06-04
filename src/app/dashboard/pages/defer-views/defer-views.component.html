@@ -1,0 +1,24 @@
+<app-title title="Defer Views/Blocks" />
+
+<section class="grid grid-cols-1">
+  @defer () {
+    <app-heavy-loaders-slow cssClass="bg-blue-500" />
+  } @placeholder {
+    <p class="h-[600] w-full bg-gradient-to-r from-blue-200 to-blue-400 animate-pulse">Cargando...</p>
+  }
+
+  @defer (on idle) {
+    <app-heavy-loaders-slow cssClass="bg-green-500" />
+  } @placeholder {
+    <p class="h-[600] w-full bg-gradient-to-r from-green-200 to-green-400 animate-pulse">Cargando...</p>
+  }
+
+  @defer (on viewport) {
+    <app-heavy-loaders-slow cssClass="bg-purple-500" />
+  } @placeholder {
+    <p class="h-[600] w-full bg-gradient-to-r from-purple-200 to-purple-400 animate-pulse">Cargando...</p>
+  }
+</section>
+
+
+
